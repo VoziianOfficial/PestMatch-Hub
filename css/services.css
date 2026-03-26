@@ -67,9 +67,9 @@
     z-index: 2;
     width: 100%;
     display: grid;
-    grid-template-columns: minmax(0, 1.02fr) minmax(280px, 360px);
-    gap: 1.5rem;
-    align-items: end;
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 430px);
+    gap: clamp(1.8rem, 3vw, 3rem);
+    align-items: center;
     padding-top: clamp(2.8rem, 5vw, 4.5rem);
     padding-bottom: clamp(3rem, 7vw, 5rem);
 }
@@ -77,27 +77,35 @@
 .services-directory-hero__copy {
     display: grid;
     gap: 1.3rem;
-    max-width: 760px;
+    width: min(100%, 980px);
+    max-width: 980px;
+    margin-inline: auto;
+    justify-items: center;
+    text-align: center;
+}
+
+.services-directory-hero__copy .section-eyebrow {
+    justify-self: center;
 }
 
 .services-directory-hero__copy h1 {
-    max-width: 11ch;
+    max-width: 20ch;
     letter-spacing: -0.055em;
 }
 
 .services-directory-hero__copy p {
-    max-width: 58ch;
-    font-size: clamp(1rem, 1.35vw, 1.14rem);
+    max-width: 72ch;
+    font-size: clamp(1.04rem, 1.35vw, 1.18rem);
     color: #445a52;
 }
 
 .services-directory-hero__aside {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .services-directory-hero__note {
-    width: min(100%, 360px);
+    width: min(100%, 430px);
     padding: 1.35rem;
     border: 1px solid rgba(18, 55, 43, 0.08);
     border-radius: 30px;
@@ -105,6 +113,7 @@
         linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(241, 246, 243, 0.92) 100%);
     box-shadow: var(--shadow-lg);
     backdrop-filter: blur(18px);
+    margin-inline: auto;
 }
 
 .services-directory-hero__note p {
@@ -114,21 +123,31 @@
 }
 
 /* ==================================================
-   METRICS
+   SERVICE DETAILS
 ================================================== */
-.directory-metrics {
+.directory-details {
     position: relative;
     margin-top: -2rem;
     z-index: 4;
 }
 
-.directory-metrics__grid {
+.directory-details__intro {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.directory-details__intro h2 {
+    max-width: 24ch;
+}
+
+.directory-details__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
 }
 
-.directory-metric {
+.directory-detail-card {
     min-height: 142px;
     padding: 1.25rem;
     border: 1px solid rgba(18, 55, 43, 0.08);
@@ -136,22 +155,39 @@
     background: rgba(255, 255, 255, 0.9);
     box-shadow: var(--shadow-md);
     display: grid;
-    align-content: space-between;
+    align-content: start;
+    gap: 0.9rem;
 }
 
-.directory-metric strong {
-    display: block;
+.directory-detail-card h3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
     color: var(--color-primary);
     font-family: var(--font-heading);
-    font-size: clamp(1.35rem, 2vw, 1.8rem);
+    font-size: clamp(1.2rem, 1.55vw, 1.45rem);
     line-height: 1.02;
     letter-spacing: -0.04em;
 }
 
-.directory-metric span {
+.directory-detail-card h3 svg {
+    width: 18px;
+    height: 18px;
+    color: var(--color-accent);
+}
+
+.directory-detail-card ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.55rem;
+}
+
+.directory-detail-card li {
     color: var(--color-text-muted);
-    font-size: 0.96rem;
-    font-weight: 700;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.5;
 }
 
 /* ==================================================
@@ -470,7 +506,7 @@
         grid-template-columns: 1fr;
     }
 
-    .directory-metrics__grid {
+    .directory-details__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -495,7 +531,7 @@
 
     .services-directory-hero__content {
         grid-template-columns: 1fr;
-        align-items: start;
+        align-items: center;
         gap: 1.5rem;
         padding-top: 2rem;
         padding-bottom: 3rem;
@@ -518,7 +554,7 @@
         font-size: 1rem;
     }
 
-    .directory-metrics__grid,
+    .directory-details__grid,
     .directory-categories__grid {
         grid-template-columns: 1fr;
     }
@@ -548,7 +584,7 @@
     }
 
     .services-directory-hero__note,
-    .directory-metric,
+    .directory-detail-card,
     .directory-card__body,
     .directory-editorial__stack article,
     .directory-feature-story__card,
