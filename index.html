@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PestMatch Hub | Compare Local Pest Control Providers</title>
+    <meta name="description"
+        content="PestMatch Hub is a free platform that helps homeowners compare local pest control providers, review service categories, and request quotes from independent companies." />
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/global/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/home.css" />
+</head>
+
+<body class="home-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="site-cookie-banner" id="cookieBanner" aria-label="Cookie and policy notice">
+        <div class="site-cookie-banner__inner container">
+            <div class="site-cookie-banner__content">
+                <p>
+                    We use site functionality tools and policy preferences to support your browsing experience.
+                    Please review our
+                    <a href="privacy-policy.html">Privacy Policy</a>,
+                    <a href="cookie-policy.html">Cookie Policy</a>, and
+                    <a href="terms-of-service.html">Terms of Service</a>.
+                </p>
+            </div>
+            <div class="site-cookie-banner__actions">
+                <button class="btn btn-primary" id="cookieAcceptBtn" type="button">Accept</button>
+                <button class="btn btn-secondary" id="cookieDeclineBtn" type="button">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="site-header" id="siteHeader">
+        <div class="container header-shell">
+            <a href="index.html" class="site-logo" aria-label="PestMatch Hub home">
+                <span class="site-logo__mark" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="8" y="10" width="48" height="44" rx="14" fill="currentColor" />
+                        <path d="M22 35C22 28.3726 27.3726 23 34 23H42V29H34C30.6863 29 28 31.6863 28 35V42H22V35Z"
+                            fill="white" />
+                        <path d="M34 42V36H42C45.3137 36 48 33.3137 48 30V23H54V30C54 36.6274 48.6274 42 42 42H34Z"
+                            fill="white" />
+                    </svg>
+                </span>
+                <span class="site-logo__text">
+                    <strong>PestMatch</strong>
+                    <span>Hub</span>
+                </span>
+            </a>
+
+            <nav class="site-nav" aria-label="Main navigation">
+                <div class="site-nav__inner">
+                    <a href="index.html" aria-current="page">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+
+            <div class="header-actions">
+                <a class="header-phone" href="tel:+18885550194" aria-label="Call now at 1 888 555 0194">
+                    <i data-lucide="phone-call"></i>
+                    <span>(888) 555-0194</span>
+                </a>
+
+                <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu"
+                    aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <div class="mobile-menu__panel">
+            <div class="mobile-menu__top">
+                <a href="index.html" class="site-logo" aria-label="PestMatch Hub home">
+                    <span class="site-logo__mark" aria-hidden="true">
+                        <svg width="30" height="30" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="10" width="48" height="44" rx="14" fill="currentColor" />
+                            <path d="M22 35C22 28.3726 27.3726 23 34 23H42V29H34C30.6863 29 28 31.6863 28 35V42H22V35Z"
+                                fill="white" />
+                            <path d="M34 42V36H42C45.3137 36 48 33.3137 48 30V23H54V30C54 36.6274 48.6274 42 42 42H34Z"
+                                fill="white" />
+                        </svg>
+                    </span>
+                    <span class="site-logo__text">
+                        <strong>PestMatch</strong>
+                        <span>Hub</span>
+                    </span>
+                </a>
+
+                <button class="mobile-menu-close" type="button" aria-label="Close menu">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+
+            <div class="mobile-menu__body">
+                <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+
+                <div class="mobile-menu__services">
+                    <label for="mobileServiceSelect">Browse service categories</label>
+                    <select id="mobileServiceSelect" aria-label="Select service page">
+                        <option value="">Choose a service</option>
+                        <option value="ant-control.html">Ant Control</option>
+                        <option value="termite-control.html">Termite Control</option>
+                        <option value="rodent-control.html">Rodent Control</option>
+                        <option value="bed-bug-treatment.html">Bed Bug Treatment</option>
+                        <option value="mosquito-control.html">Mosquito Control</option>
+                        <option value="commercial-pest-control.html">Commercial Pest Control</option>
+                    </select>
+                </div>
+
+                <div class="mobile-menu__contact">
+                    <p>Need a quicker route?</p>
+                    <a href="tel:+18885550194" class="btn btn-primary">
+                        <i data-lucide="phone-call"></i>
+                        Call Now
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">Request Quotes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <section class="hero-cinematic">
+            <div class="hero-cinematic__media">
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1800&q=80"
+                    alt="Clean residential home exterior" />
+            </div>
+            <div class="hero-cinematic__overlay"></div>
+
+            <div class="container hero-cinematic__content">
+                <div class="hero-cinematic__copy">
+                    <span class="section-eyebrow">
+                        <i data-lucide="shield-check"></i>
+                        Independent comparison platform
+                    </span>
+
+                    <h1>
+                        Pest control comparison built to feel clearer, faster, and more premium
+                    </h1>
+
+                    <p>
+                        PestMatch Hub helps homeowners review service categories, compare local provider options,
+                        and request quotes from independent pest control companies that may serve their property.
+                    </p>
+
+                    <div class="hero-cinematic__actions">
+                        <a href="contact.html" class="btn btn-primary">
+                            <i data-lucide="arrow-right"></i>
+                            Request Quotes
+                        </a>
+                        <a href="services.html" class="btn btn-secondary">
+                            <i data-lucide="layout-grid"></i>
+                            Explore Services
+                        </a>
+                    </div>
+                </div>
+
+                <aside class="hero-cinematic__panel">
+                    <div class="hero-panel">
+                        <span class="mini-label">Quick overview</span>
+                        <h2>Compare providers with more structure and less random searching</h2>
+
+                        <div class="hero-panel__metrics">
+                            <article>
+                                <strong>6</strong>
+                                <span>service tracks</span>
+                            </article>
+                            <article>
+                                <strong>Fast</strong>
+                                <span>request flow</span>
+                            </article>
+                            <article>
+                                <strong>USA</strong>
+                                <span>service-area model</span>
+                            </article>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="trust-marquee" aria-label="Common categories">
+            <div class="trust-marquee__track">
+                <div class="trust-marquee__group">
+                    <span><i data-lucide="bug"></i> Ant Control</span>
+                    <span><i data-lucide="scan-search"></i> Termite Control</span>
+                    <span><i data-lucide="shield"></i> Rodent Control</span>
+                    <span><i data-lucide="bed-double"></i> Bed Bug Treatment</span>
+                    <span><i data-lucide="trees"></i> Mosquito Control</span>
+                    <span><i data-lucide="briefcase-business"></i> Commercial Pest Control</span>
+                </div>
+                <div class="trust-marquee__group" aria-hidden="true">
+                    <span><i data-lucide="bug"></i> Ant Control</span>
+                    <span><i data-lucide="scan-search"></i> Termite Control</span>
+                    <span><i data-lucide="shield"></i> Rodent Control</span>
+                    <span><i data-lucide="bed-double"></i> Bed Bug Treatment</span>
+                    <span><i data-lucide="trees"></i> Mosquito Control</span>
+                    <span><i data-lucide="briefcase-business"></i> Commercial Pest Control</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="editorial-intro section-space">
+            <div class="container editorial-intro__grid">
+                <div class="editorial-intro__copy">
+                    <span class="section-eyebrow">
+                        <i data-lucide="sparkles"></i>
+                        Platform philosophy
+                    </span>
+                    <h2>Better comparison starts with better framing</h2>
+                    <p>
+                        Most homeowners do not want to jump between random provider pages. They want to understand
+                        the issue, compare local options more clearly, and move through a request process that feels
+                        organized.
+                    </p>
+                </div>
+
+                <div class="editorial-intro__quote">
+                    <p>
+                        “The category structure made the process feel less confusing and more premium from the start.”
+                    </p>
+                    <strong>Residential platform feedback</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-rail section-space">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-eyebrow">
+                        <i data-lucide="layout-panel-top"></i>
+                        Service categories
+                    </span>
+                    <h2>Start with the issue you actually need to compare</h2>
+                </div>
+
+                <div class="service-rail__stack">
+                    <a href="ant-control.html" class="service-rail__item service-rail__item--large">
+                        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80"
+                            alt="Front yard and entry path" />
+                        <div class="service-rail__content">
+                            <span>Ant Control</span>
+                            <p>Compare recurring treatment options and prevention-focused approaches.</p>
+                        </div>
+                    </a>
+
+                    <a href="termite-control.html" class="service-rail__item">
+                        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80"
+                            alt="Residential structure exterior" />
+                        <div class="service-rail__content">
+                            <span>Termite Control</span>
+                            <p>Review inspection, treatment, and prevention comparison points.</p>
+                        </div>
+                    </a>
+
+                    <a href="rodent-control.html" class="service-rail__item">
+                        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80"
+                            alt="Residential entry area" />
+                        <div class="service-rail__content">
+                            <span>Rodent Control</span>
+                            <p>Compare sealing, monitoring, and follow-up routes.</p>
+                        </div>
+                    </a>
+
+                    <a href="bed-bug-treatment.html" class="service-rail__item">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80"
+                            alt="Bedroom interior" />
+                        <div class="service-rail__content">
+                            <span>Bed Bug Treatment</span>
+                            <p>Understand what to compare before requesting quotes.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="comparison-editorial section-space">
+            <div class="container comparison-editorial__grid">
+                <article class="comparison-editorial__card">
+                    <i data-lucide="clock-3"></i>
+                    <h3>Timing</h3>
+                    <p>How quickly a provider can inspect or respond often matters as much as pricing.</p>
+                </article>
+                <article class="comparison-editorial__card">
+                    <i data-lucide="badge-dollar-sign"></i>
+                    <h3>Pricing format</h3>
+                    <p>One-time visits, recurring plans, and inspection fees may vary significantly.</p>
+                </article>
+                <article class="comparison-editorial__card">
+                    <i data-lucide="map-pinned"></i>
+                    <h3>Service area</h3>
+                    <p>Availability depends on whether a provider actually serves the homeowner’s ZIP code.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="testimonial-editorial section-space">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-eyebrow">
+                        <i data-lucide="star"></i>
+                        Platform experience
+                    </span>
+                    <h2>Feedback focused on speed, clarity, and response flow</h2>
+                </div>
+
+                <div class="testimonial-editorial__grid">
+                    <article class="testimonial-editorial__item">
+                        <p>“It felt more polished than searching multiple websites on my own.”</p>
+                        <strong>Homeowner request feedback</strong>
+                    </article>
+                    <article class="testimonial-editorial__item">
+                        <p>“The category pages made the next step obvious instead of overwhelming.”</p>
+                        <strong>Residential platform user</strong>
+                    </article>
+                    <article class="testimonial-editorial__item">
+                        <p>“A much cleaner way to compare local pest control options.”</p>
+                        <strong>Platform experience review</strong>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="coverage-editorial section-space">
+            <div class="container coverage-editorial__grid">
+                <div class="coverage-editorial__copy">
+                    <span class="section-eyebrow">
+                        <i data-lucide="radar"></i>
+                        Coverage
+                    </span>
+                    <h2>Built around requests across the United States</h2>
+                    <p>
+                        PestMatch Hub is designed for homeowners comparing local pest control providers in many U.S.
+                        markets. Service availability depends on provider coverage and location.
+                    </p>
+                </div>
+
+                <div class="coverage-editorial__map">
+                    <iframe title="USA map preview" src="https://www.google.com/maps?q=United%20States&z=3&output=embed"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="bottom-request section-space">
+            <div class="container bottom-request__shell">
+                <div class="bottom-request__intro">
+                    <span class="section-eyebrow">
+                        <i data-lucide="clipboard-list"></i>
+                        Request details
+                    </span>
+                    <h2>Start with a short request and compare your local options</h2>
+                    <p>
+                        Share a few details so the platform can help route your request more clearly.
+                    </p>
+                </div>
+
+                <form class="bottom-request__form" data-form-type="home-form">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="homeName">Full Name</label>
+                            <input id="homeName" name="name" type="text" placeholder="Your name" required />
+                        </div>
+                        <div class="form-field">
+                            <label for="homePhone">Phone</label>
+                            <input id="homePhone" name="phone" type="tel" placeholder="Phone number" required />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="homeZip">ZIP Code</label>
+                            <input id="homeZip" name="zip" type="text" placeholder="ZIP code" required />
+                        </div>
+                        <div class="form-field">
+                            <label for="homeService">Service Category</label>
+                            <select id="homeService" name="service" required>
+                                <option value="">Select a category</option>
+                                <option>Ant Control</option>
+                                <option>Termite Control</option>
+                                <option>Rodent Control</option>
+                                <option>Bed Bug Treatment</option>
+                                <option>Mosquito Control</option>
+                                <option>Commercial Pest Control</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="homeMessage">Request Notes</label>
+                        <textarea id="homeMessage" name="message"
+                            placeholder="Tell us a bit about the issue or property need"></textarea>
+                    </div>
+
+                    <div class="form-check">
+                        <input id="homeConsent" name="consent" type="checkbox" required />
+                        <label for="homeConsent">I agree to be contacted regarding my request.</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i data-lucide="arrow-right"></i>
+                        Compare Local Options
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section class="faq-section section-space">
+            <div class="container faq-layout">
+                <div class="faq-intro">
+                    <span class="section-eyebrow">
+                        <i data-lucide="circle-help"></i>
+                        FAQ
+                    </span>
+                    <h2>Questions homeowners often ask before comparing providers</h2>
+                    <p>
+                        A quick overview of how the platform works and what users usually compare.
+                    </p>
+                </div>
+
+                <div class="faq-list">
+                    <article class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>How do I compare local pest control providers?</span>
+                            <i data-lucide="plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Many homeowners compare availability, service area, pricing structure, and issue-specific
+                                fit.</p>
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Are quotes from providers usually free?</span>
+                            <i data-lucide="plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Some providers offer free quotes or inspections, while others may charge depending on the
+                                issue or property type.</p>
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>How do I know if a provider serves my area?</span>
+                            <i data-lucide="plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Service area varies by company. The request flow helps narrow options by ZIP code and
+                                location.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__grid">
+                <div class="site-footer__brand">
+                    <a href="index.html" class="site-logo" aria-label="PestMatch Hub home">
+                        <span class="site-logo__mark" aria-hidden="true">
+                            <svg width="30" height="30" viewBox="0 0 64 64" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="10" width="48" height="44" rx="14" fill="currentColor" />
+                                <path
+                                    d="M22 35C22 28.3726 27.3726 23 34 23H42V29H34C30.6863 29 28 31.6863 28 35V42H22V35Z"
+                                    fill="white" />
+                                <path
+                                    d="M34 42V36H42C45.3137 36 48 33.3137 48 30V23H54V30C54 36.6274 48.6274 42 42 42H34Z"
+                                    fill="white" />
+                            </svg>
+                        </span>
+                        <span class="site-logo__text">
+                            <strong>PestMatch</strong>
+                            <span>Hub</span>
+                        </span>
+                    </a>
+
+                    <p>
+                        Independent platform helping homeowners compare local pest control provider categories and
+                        request quotes.
+                    </p>
+                    <p class="service-area-note">Service area: United States</p>
+                </div>
+
+                <div>
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Service Pages</h3>
+                    <ul>
+                        <li><a href="ant-control.html">Ant Control</a></li>
+                        <li><a href="termite-control.html">Termite Control</a></li>
+                        <li><a href="rodent-control.html">Rodent Control</a></li>
+                        <li><a href="bed-bug-treatment.html">Bed Bug Treatment</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="site-footer__bottom">
+                <p>
+                    Disclaimer: This site is a free service to assist homeowners in connecting with local service
+                    providers. All contractors/providers are independent and this site does not warrant or guarantee any
+                    work performed. It is the responsibility of the homeowner to verify that the hired contractor
+                    furnishes the necessary license and insurance required for the work being performed. All persons
+                    depicted in a photo or video are actors or models and not contractors listed on this site.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <a class="mobile-call-cta" href="tel:+18885550194" aria-label="Call now">
+        <i data-lucide="phone-call"></i>
+        <span>Call Now</span>
+    </a>
+
+    <div class="form-success-modal" id="formSuccessModal" aria-hidden="true" role="dialog"
+        aria-label="Form submitted successfully">
+        <div class="form-success-modal__backdrop"></div>
+        <div class="form-success-modal__dialog">
+            <button class="form-success-modal__close" type="button" aria-label="Close success message">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="form-success-modal__icon">
+                <i data-lucide="badge-check"></i>
+            </div>
+            <h2>Thank you</h2>
+            <p>Your request has been submitted. We’ll use your details to help route your request appropriately.</p>
+            <button class="btn btn-primary" type="button" id="successModalBtn">Close</button>
+        </div>
+    </div>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I compare local pest control providers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many homeowners compare availability, service area, pricing structure, and issue-specific fit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are quotes from providers usually free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some providers offer free quotes or inspections, while others may charge depending on the issue or property type."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if a provider serves my area?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Service area varies by company. The request flow helps narrow options by ZIP code and location."
+      }
+    }
+  ]
+}
+</script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>

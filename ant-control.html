@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ant Control | Compare Local Provider Options | PestMatch Hub</title>
+    <meta name="description"
+        content="Explore ant control service options, compare local provider factors, and request quotes through PestMatch Hub." />
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/global/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/service-page.css" />
+</head>
+
+<body class="service-page ant-control-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="site-cookie-banner" id="cookieBanner" aria-label="Cookie and policy notice">
+        <div class="site-cookie-banner__inner container">
+            <div class="site-cookie-banner__content">
+                <p>
+                    We use site functionality tools and policy preferences to support your browsing experience.
+                    Please review our
+                    <a href="privacy-policy.html">Privacy Policy</a>,
+                    <a href="cookie-policy.html">Cookie Policy</a>, and
+                    <a href="terms-of-service.html">Terms of Service</a>.
+                </p>
+            </div>
+            <div class="site-cookie-banner__actions">
+                <button class="btn btn-primary" id="cookieAcceptBtn" type="button">Accept</button>
+                <button class="btn btn-secondary" id="cookieDeclineBtn" type="button">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="site-header" id="siteHeader">
+        <div class="container header-shell">
+            <a href="index.html" class="site-logo" aria-label="PestMatch Hub home">
+                <span class="site-logo__mark" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="8" y="10" width="48" height="44" rx="14" fill="currentColor" />
+                        <path d="M22 35C22 28.3726 27.3726 23 34 23H42V29H34C30.6863 29 28 31.6863 28 35V42H22V35Z"
+                            fill="white" />
+                        <path d="M34 42V36H42C45.3137 36 48 33.3137 48 30V23H54V30C54 36.6274 48.6274 42 42 42H34Z"
+                            fill="white" />
+                    </svg>
+                </span>
+                <span class="site-logo__text">
+                    <strong>PestMatch</strong>
+                    <span>Hub</span>
+                </span>
+            </a>
+
+            <nav class="site-nav" aria-label="Main navigation">
+                <div class="site-nav__inner">
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+
+            <div class="header-actions">
+                <a class="header-phone" href="tel:+18885550194" aria-label="Call now at 1 888 555 0194">
+                    <i data-lucide="phone-call"></i>
+                    <span>(888) 555-0194</span>
+                </a>
+
+                <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu"
+                    aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <div class="mobile-menu__panel">
+            <div class="mobile-menu__top">
+                <a href="index.html" class="site-logo" aria-label="PestMatch Hub home">
+                    <span class="site-logo__mark" aria-hidden="true">
+                        <svg width="30" height="30" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="10" width="48" height="44" rx="14" fill="currentColor" />
+                            <path d="M22 35C22 28.3726 27.3726 23 34 23H42V29H34C30.6863 29 28 31.6863 28 35V42H22V35Z"
+                                fill="white" />
+                            <path d="M34 42V36H42C45.3137 36 48 33.3137 48 30V23H54V30C54 36.6274 48.6274 42 42 42H34Z"
+                                fill="white" />
+                        </svg>
+                    </span>
+                    <span class="site-logo__text">
+                        <strong>PestMatch</strong>
+                        <span>Hub</span>
+                    </span>
+                </a>
+
+                <button class="mobile-menu-close" type="button" aria-label="Close menu">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+
+            <div class="mobile-menu__body">
+                <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+
+                <div class="mobile-menu__services">
+                    <label for="mobileServiceSelect">Browse service categories</label>
+                    <select id="mobileServiceSelect" aria-label="Select service page">
+                        <option value="">Choose a service</option>
+                        <option value="ant-control.html">Ant Control</option>
+                        <option value="termite-control.html">Termite Control</option>
+                        <option value="rodent-control.html">Rodent Control</option>
+                        <option value="bed-bug-treatment.html">Bed Bug Treatment</option>
+                        <option value="mosquito-control.html">Mosquito Control</option>
+                        <option value="commercial-pest-control.html">Commercial Pest Control</option>
+                    </select>
+                </div>
+
+                <div class="mobile-menu__contact">
+                    <p>Need a quicker route?</p>
+                    <a href="tel:+18885550194" class="btn btn-primary">
+                        <i data-lucide="phone-call"></i>
+                        Call Now
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">Request Quotes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <section class="service-hero service-hero--ant">
+            <div class="service-hero__media">
+                <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1800&q=80"
+                    alt="Clean residential front yard and house entry" />
+            </div>
+            <div class="service-hero__overlay"></div>
+
+            <div class="container service-hero__content">
+                <div class="service-hero__copy">
+                    <span class="section-eyebrow">
+                        <i data-lucide="bug"></i>
+                        Ant Control
+                    </span>
+                    <h1>Compare local ant control provider options with a clearer starting point</h1>
+                    <p>
+                        Ant activity can vary from occasional indoor sightings to recurring outdoor or structural
+                        concerns.
+                        This page is designed to help homeowners compare provider options more clearly before requesting
+                        quotes.
+                    </p>
+
+                    <div class="service-hero__actions">
+                        <a href="contact.html" class="btn btn-primary">
+                            <i data-lucide="clipboard-list"></i>
+                            Request Quotes
+                        </a>
+                        <a href="services.html" class="btn btn-secondary">
+                            <i data-lucide="layout-grid"></i>
+                            Back to Services
+                        </a>
+                    </div>
+                </div>
+
+                <aside class="service-hero__panel">
+                    <span class="mini-label">Common comparison points</span>
+                    <div class="service-hero__panel-list">
+                        <article>
+                            <strong>Inspection approach</strong>
+                            <span>Indoor, outdoor, or full-property review</span>
+                        </article>
+                        <article>
+                            <strong>Treatment type</strong>
+                            <span>One-time visit or recurring plan structure</span>
+                        </article>
+                        <article>
+                            <strong>Problem scope</strong>
+                            <span>Kitchen activity, wall entry, yard nesting, perimeter issues</span>
+                        </article>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="service-overview section-space">
+            <div class="container service-overview__grid">
+                <div class="service-overview__copy">
+                    <span class="section-eyebrow">
+                        <i data-lucide="info"></i>
+                        Service overview
+                    </span>
+                    <h2>What homeowners usually mean when they search for ant control</h2>
+                    <p>
+                        In most cases, users are looking for help with recurring ant activity in kitchens,
+                        bathrooms, entry areas, patios, landscaping zones, or around the perimeter of the home.
+                    </p>
+                    <p>
+                        The goal is often not just short-term removal, but understanding how a provider approaches
+                        inspection, entry points, recurring colonies, and follow-up prevention.
+                    </p>
+                </div>
+
+                <div class="service-overview__card">
+                    <p>
+                        PestMatch Hub does not perform ant control services directly. This page is structured to help
+                        homeowners compare independent local provider options more clearly.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-factors section-space">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-eyebrow">
+                        <i data-lucide="sliders-horizontal"></i>
+                        Comparison factors
+                    </span>
+                    <h2>What many homeowners compare before choosing a provider</h2>
+                    <p>
+                        Ant control requests often differ based on recurrence, property conditions, and whether the
+                        issue
+                        is inside, outside, or both.
+                    </p>
+                </div>
+
+                <div class="service-factors__grid">
+                    <article class="service-factor-card">
+                        <i data-lucide="search"></i>
+                        <h3>Inspection depth</h3>
+                        <p>Some users want a fast treatment visit, while others want a more detailed inspection of the
+                            property.</p>
+                    </article>
+
+                    <article class="service-factor-card">
+                        <i data-lucide="calendar-range"></i>
+                        <h3>One-time vs ongoing</h3>
+                        <p>Provider options may differ between a single service visit and an ongoing prevention-style
+                            plan.</p>
+                    </article>
+
+                    <article class="service-factor-card">
+                        <i data-lucide="home"></i>
+                        <h3>Indoor vs outdoor activity</h3>
+                        <p>The scope may depend on whether the concern is limited to interior rooms or linked to
+                            exterior nesting.</p>
+                    </article>
+
+                    <article class="service-factor-card">
+                        <i data-lucide="badge-dollar-sign"></i>
+                        <h3>Pricing format</h3>
+                        <p>Users often compare whether pricing is based on visit type, property scope, or longer-term
+                            service structure.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-scenarios section-space">
+            <div class="container service-scenarios__grid">
+                <div class="service-scenarios__intro">
+                    <span class="section-eyebrow">
+                        <i data-lucide="sparkles"></i>
+                        Common request scenarios
+                    </span>
+                    <h2>Typical reasons homeowners start comparing ant control options</h2>
+                </div>
+
+                <div class="service-scenarios__list">
+                    <article>
+                        <h3>Recurring kitchen activity</h3>
+                        <p>Frequent sightings near counters, food storage areas, sinks, or trash zones.</p>
+                    </article>
+                    <article>
+                        <h3>Exterior entry concerns</h3>
+                        <p>Ant trails near doors, windows, patios, siding lines, or landscaping edges.</p>
+                    </article>
+                    <article>
+                        <h3>Seasonal spikes</h3>
+                        <p>Short-term increases in activity during warmer periods or after weather changes.</p>
+                    </article>
+                    <article>
+                        <h3>Follow-up prevention</h3>
+                        <p>Users who want more than temporary treatment often compare providers on prevention planning.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-editorial section-space">
+            <div class="container service-editorial__grid">
+                <div class="service-editorial__quote">
+                    <p>
+                        “For many homeowners, the key question is not just who can visit first — it’s which provider
+                        seems better suited for the type of ant issue involved.”
+                    </p>
+                    <strong>Comparison-focused platform perspective</strong>
+                </div>
+
+                <div class="service-editorial__copy">
+                    <span class="mini-label">Why this page exists</span>
+                    <p>
+                        Ant control requests can look simple at first, but the comparison process often becomes clearer
+                        when users think about treatment scope, recurrence, prevention, and how the provider evaluates
+                        the property.
+                    </p>
+                    <p>
+                        This service page is meant to support that comparison process before a user submits request
+                        details.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-process section-space">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-eyebrow">
+                        <i data-lucide="workflow"></i>
+                        How to use this page
+                    </span>
+                    <h2>A cleaner path from category browsing to quote request</h2>
+                </div>
+
+                <div class="service-process__grid">
+                    <article class="service-process-card">
+                        <span>01</span>
+                        <h3>Review the service type</h3>
+                        <p>Start by confirming the issue aligns with ant activity rather than another pest category.</p>
+                    </article>
+
+                    <article class="service-process-card">
+                        <span>02</span>
+                        <h3>Think about the scope</h3>
+                        <p>Consider whether the issue is isolated, recurring, indoor, outdoor, or perimeter-related.</p>
+                    </article>
+
+                    <article class="service-process-card">
+                        <span>03</span>
+                        <h3>Compare provider factors</h3>
+                        <p>Use inspection style, timing, pricing structure, and follow-up planning as comparison points.
+                        </p>
+                    </article>
+
+                    <article class="service-process-card">
+                        <span>04</span>
+                        <h3>Submit request details</h3>
+                        <p>Move into the request flow once the category and comparison priorities are clearer.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-faq section-space">
+            <div class="container service-faq__layout">
+                <div class="service-faq__intro">
+                    <span class="section-eyebrow">
+                        <i data-lucide="circle-help"></i>
+                        FAQ
+                    </span>
+                    <h2>Questions homeowners often ask about ant control requests</h2>
+                    <p>
+                        A quick overview of what users often compare before choosing a local provider option.
+                    </p>
+                </div>
+
+                <div class="faq-list">
+                    <article class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>What should I compare before choosing an ant control provider?</span>
+                            <i data-lucide="plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Many homeowners compare inspection style, service scope, whether the issue is indoor or
+                                outdoor,
+                                pricing structure, and whether follow-up prevention is part of the service approach.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Are ant control quotes usually free?</span>
+                            <i data-lucide="plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Some providers may offer free quotes or inspections, while others may charge depending
+                                on
+                                the property, issue complexity, or urgency.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Why do homeowners compare one-time and recurring service options?</span>
+                            <i data-lucide="plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Because some ant issues appear occasional, while others are recurring or seasonal. That
+                                can affect
+                                whether a single treatment visit or a longer-term prevention plan feels more relevant.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>How do I know if a provider serves my ZIP code?</span>
+                            <i data-lucide="plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Service area varies by company. The request flow is designed to help users compare local
+                                provider
+                                options that may fit the property location and requested category.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-cta section-space">
+            <div class="container">
+                <div class="service-cta__inner">
+                    <div class="service-cta__copy">
+                        <span class="section-eyebrow">
+                            <i data-lucide="arrow-right"></i>
+                            Next step
+                        </span>
+                        <h2>Turn category research into a more focused local quote request</h2>
+                        <p>
+                            Start with your property details and compare independent local provider options more
+                            clearly.
+                        </p>
+                    </div>
+
+                    <div class="service-cta__actions">
+                        <a href="contact.html" class="btn btn-primary">
+                            <i data-lucide="clipboard-list"></i>
+                            Request Quotes
+                        </a>
+                        <a href="tel:+18885550194" class="btn btn-secondary">
+                            <i data-lucide="phone-call"></i>
+                            Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__grid">
+                <div class="site-footer__brand">
+                    <a href="index.html" class="site-logo" aria-label="PestMatch Hub home">
+                        <span class="site-logo__mark" aria-hidden="true">
+                            <svg width="30" height="30" viewBox="0 0 64 64" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="10" width="48" height="44" rx="14" fill="currentColor" />
+                                <path
+                                    d="M22 35C22 28.3726 27.3726 23 34 23H42V29H34C30.6863 29 28 31.6863 28 35V42H22V35Z"
+                                    fill="white" />
+                                <path
+                                    d="M34 42V36H42C45.3137 36 48 33.3137 48 30V23H54V30C54 36.6274 48.6274 42 42 42H34Z"
+                                    fill="white" />
+                            </svg>
+                        </span>
+                        <span class="site-logo__text">
+                            <strong>PestMatch</strong>
+                            <span>Hub</span>
+                        </span>
+                    </a>
+
+                    <p>
+                        Independent platform helping homeowners compare local pest control provider categories and
+                        request quotes.
+                    </p>
+                    <p class="service-area-note">Service area: United States</p>
+                </div>
+
+                <div>
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Service Pages</h3>
+                    <ul>
+                        <li><a href="ant-control.html">Ant Control</a></li>
+                        <li><a href="termite-control.html">Termite Control</a></li>
+                        <li><a href="rodent-control.html">Rodent Control</a></li>
+                        <li><a href="bed-bug-treatment.html">Bed Bug Treatment</a></li>
+                        <li><a href="mosquito-control.html">Mosquito Control</a></li>
+                        <li><a href="commercial-pest-control.html">Commercial Pest Control</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="site-footer__bottom">
+                <p>
+                    Disclaimer: This site is a free service to assist homeowners in connecting with local service
+                    providers. All contractors/providers are independent and this site does not warrant or guarantee any
+                    work performed. It is the responsibility of the homeowner to verify that the hired contractor
+                    furnishes the necessary license and insurance required for the work being performed. All persons
+                    depicted in a photo or video are actors or models and not contractors listed on this site.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <a class="mobile-call-cta" href="tel:+18885550194" aria-label="Call now">
+        <i data-lucide="phone-call"></i>
+        <span>Call Now</span>
+    </a>
+
+    <div class="form-success-modal" id="formSuccessModal" aria-hidden="true" role="dialog"
+        aria-label="Form submitted successfully">
+        <div class="form-success-modal__backdrop"></div>
+        <div class="form-success-modal__dialog">
+            <button class="form-success-modal__close" type="button" aria-label="Close success message">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="form-success-modal__icon">
+                <i data-lucide="badge-check"></i>
+            </div>
+            <h2>Thank you</h2>
+            <p>Your request has been submitted. We’ll use your details to help route your request appropriately.</p>
+            <button class="btn btn-primary" type="button" id="successModalBtn">Close</button>
+        </div>
+    </div>
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What should I compare before choosing an ant control provider?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Many homeowners compare inspection style, service scope, whether the issue is indoor or outdoor, pricing structure, and whether follow-up prevention is part of the service approach."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are ant control quotes usually free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Some providers may offer free quotes or inspections, while others may charge depending on the property, issue complexity, or urgency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do homeowners compare one-time and recurring service options?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Because some ant issues appear occasional, while others are recurring or seasonal. That can affect whether a single treatment visit or a longer-term prevention plan feels more relevant."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if a provider serves my ZIP code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Service area varies by company. The request flow is designed to help users compare local provider options that may fit the property location and requested category."
+        }
+      }
+    ]
+  }
+  </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/main.js"></script>
+    <script src="js/service-page.js"></script>
+</body>
+
+</html>
