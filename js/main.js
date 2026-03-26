@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const root = document.documentElement;
-
     // =========================
     // ICONS
     // =========================
@@ -11,64 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     refreshIcons();
-
-    // =========================
-    // AOS
-    // =========================
-    if (window.AOS) {
-        try {
-            AOS.init({
-                duration: 850,
-                easing: "ease-out-cubic",
-                once: true,
-                offset: 40,
-                mirror: false,
-            });
-
-            root.classList.add("aos-ready");
-        } catch (error) {
-            console.error("AOS init failed:", error);
-        }
-    }
-
-    // =========================
-    // LENIS
-    // =========================
-    let lenis = null;
-
-    if (window.Lenis) {
-        lenis = new Lenis({
-            duration: 1.05,
-            smoothWheel: true,
-            smoothTouch: false,
-            wheelMultiplier: 0.95,
-            touchMultiplier: 1,
-        });
-
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-
-        requestAnimationFrame(raf);
-    }
-
-    // =========================
-    // GSAP + SCROLLTRIGGER
-    // =========================
-    if (window.gsap && window.ScrollTrigger) {
-        gsap.registerPlugin(ScrollTrigger);
-
-        if (lenis) {
-            lenis.on("scroll", ScrollTrigger.update);
-
-            gsap.ticker.add((time) => {
-                lenis.raf(time * 1000);
-            });
-
-            gsap.ticker.lagSmoothing(0);
-        }
-    }
 
     // =========================
     // DOM REFERENCES
@@ -85,16 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const cookieAcceptBtn = document.getElementById("cookieAcceptBtn");
     const cookieDeclineBtn = document.getElementById("cookieDeclineBtn");
 
-    const forms = document.querySelectorAll("form[data-form-type]");
     const successModal = document.getElementById("formSuccessModal");
     const successModalClose = document.querySelector(".form-success-modal__close");
     const successModalBtn = document.getElementById("successModalBtn");
     const successModalBackdrop = document.querySelector(".form-success-modal__backdrop");
 
-    const faqButtons = document.querySelectorAll(".faq-question");
-
     // =========================
-    // HEADER SCROLLED STATE
+    // STICKY HEADER
     // =========================
     const handleHeaderState = () => {
         if (!siteHeader) return;
@@ -107,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     handleHeaderState();
-    window.addEventListener("scroll", handleHeaderState);
+    window.addEventListener("scroll", handleHeaderState, { passive: true });
 
     // =========================
     // MOBILE MENU
@@ -130,21 +67,14 @@ document.addEventListener("DOMContentLoaded", () => {
         body.classList.remove("menu-open");
     };
 
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener("click", openMobileMenu);
-    }
+    mobileMenuToggle?.addEventListener("click", openMobileMenu);
+    mobileMenuClose?.addEventListener("click", closeMobileMenu);
 
-    if (mobileMenuClose) {
-        mobileMenuClose.addEventListener("click", closeMobileMenu);
-    }
-
-    if (mobileMenu) {
-        mobileMenu.addEventListener("click", (event) => {
-            if (event.target === mobileMenu) {
-                closeMobileMenu();
-            }
-        });
-    }
+    mobileMenu?.addEventListener("click", (event) => {
+        if (event.target === mobileMenu) {
+            closeMobileMenu();
+        }
+    });
 
     document.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && mobileMenu?.classList.contains("is-open")) {
@@ -152,14 +82,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    if (mobileServiceSelect) {
-        mobileServiceSelect.addEventListener("change", (event) => {
-            const { value } = event.target;
-            if (value) {
-                window.location.href = value;
-            }
+    mobileServiceSelect?.addEventListener("change", (event) => {
+        const { value } = event.target;
+        if (value) {
+            window.location.href = value;
+        }
+    });
+
+    // close mobile menu after clicking a link inside it
+    const mobileMenuLinks = mobileMenu?.querySelectorAll("a");
+    mobileMenuLinks?.forEach((link) => {
+        link.addEventListener("click", () => {
+            closeMobileMenu();
         });
-    }
+    });
 
     // =========================
     // COOKIE / POLICY BANNER
@@ -214,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // =========================
-    // SUCCESS MODAL
+    // SUCCESS MODAL HELPERS
     // =========================
     const openSuccessModal = () => {
         if (!successModal) return;
@@ -232,8 +168,30 @@ document.addEventListener("DOMContentLoaded", () => {
         body.classList.remove("modal-open");
     };
 
-    forms.forEach((form) => {
+    successModalClose?.addEventListener("click", closeSuccessModal);
+    successModalBtn?.addEventListener("click", closeSuccessModal);
+    successModalBackdrop?.addEventListener("click", closeSuccessModal);
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && successModal?.classList.contains("is-active")) {
+            closeSuccessModal();
+        }
+    });
+
+    // =========================
+    // GENERIC FORM FALLBACK
+    // =========================
+    // This only handles forms that are NOT explicitly marked as JS-owned by page scripts.
+    // If a form has data-form-managed="page", main.js will ignore it.
+    const genericForms = document.querySelectorAll(
+        "form[data-form-type]:not([data-form-managed='page'])"
+    );
+
+    genericForms.forEach((form) => {
         form.addEventListener("submit", (event) => {
+            // Let page-level scripts fully own forms marked by page logic.
+            if (form.dataset.formManaged === "page") return;
+
             event.preventDefault();
 
             if (!form.checkValidity()) {
@@ -246,73 +204,71 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    successModalClose?.addEventListener("click", closeSuccessModal);
-    successModalBtn?.addEventListener("click", closeSuccessModal);
-    successModalBackdrop?.addEventListener("click", closeSuccessModal);
-
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && successModal?.classList.contains("is-active")) {
-            closeSuccessModal();
-        }
-    });
-
     // =========================
-    // FAQ ACCORDION
+    // OPTIONAL SAFE FAQ FALLBACK
     // =========================
-    faqButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            const faqItem = button.closest(".faq-item");
-            const answer = faqItem?.querySelector(".faq-answer");
-            const isExpanded = button.getAttribute("aria-expanded") === "true";
+    // Only runs on pages that do not already opt into page-level FAQ handling.
+    const faqRoot = document.querySelector("[data-faq-managed='page']");
+    if (!faqRoot) {
+        const faqButtons = document.querySelectorAll(".faq-question");
 
-            faqButtons.forEach((otherButton) => {
-                const otherItem = otherButton.closest(".faq-item");
-                const otherAnswer = otherItem?.querySelector(".faq-answer");
+        faqButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const faqItem = button.closest(".faq-item");
+                const answer = faqItem?.querySelector(".faq-answer");
+                const isExpanded = button.getAttribute("aria-expanded") === "true";
 
-                otherButton.setAttribute("aria-expanded", "false");
-                otherItem?.classList.remove("is-open");
+                faqButtons.forEach((otherButton) => {
+                    const otherItem = otherButton.closest(".faq-item");
+                    const otherAnswer = otherItem?.querySelector(".faq-answer");
 
-                if (otherAnswer) {
-                    otherAnswer.style.maxHeight = null;
+                    otherButton.setAttribute("aria-expanded", "false");
+                    otherItem?.classList.remove("is-open");
+
+                    if (otherAnswer) {
+                        otherAnswer.style.maxHeight = null;
+                    }
+                });
+
+                if (!isExpanded && faqItem && answer) {
+                    button.setAttribute("aria-expanded", "true");
+                    faqItem.classList.add("is-open");
+                    answer.style.maxHeight = `${answer.scrollHeight}px`;
                 }
             });
-
-            if (!isExpanded && faqItem && answer) {
-                button.setAttribute("aria-expanded", "true");
-                faqItem.classList.add("is-open");
-                answer.style.maxHeight = `${answer.scrollHeight}px`;
-            }
         });
-    });
+    }
 
     // =========================
-    // SHARED REVEALS
+    // BASIC REVEALS (SAFE)
     // =========================
     if (window.gsap && window.ScrollTrigger) {
+        gsap.registerPlugin(ScrollTrigger);
+
         const revealItems = document.querySelectorAll(
-            ".review-card, .benefit-card, .process-panel, .coverage-showcase__map, .home-form-shell, .site-footer__grid > div"
+            ".site-footer__grid > div, .legal-section, .legal-sidebar__card"
         );
 
         revealItems.forEach((item) => {
             gsap.fromTo(
                 item,
-                {
-                    opacity: 0,
-                    y: 34,
-                },
+                { opacity: 0, y: 24 },
                 {
                     opacity: 1,
                     y: 0,
-                    duration: 0.9,
+                    duration: 0.8,
                     ease: "power3.out",
                     scrollTrigger: {
                         trigger: item,
-                        start: "top 88%",
+                        start: "top 90%",
                     },
                 }
             );
         });
     }
 
+    // =========================
+    // FINAL ICON REFRESH
+    // =========================
     refreshIcons();
 });
