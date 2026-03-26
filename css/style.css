@@ -411,6 +411,23 @@ p {
     transform: translateY(-2px);
 }
 
+.btn:focus-visible,
+.site-nav__inner a:focus-visible,
+.site-search-toggle:focus-visible,
+.header-phone:focus-visible,
+.mobile-menu-toggle:focus-visible,
+.site-search__close:focus-visible,
+.site-search__chip:focus-visible,
+.site-search__result:focus-visible,
+.faq-question:focus-visible,
+.site-cookie-banner__actions .btn:focus-visible,
+.mobile-menu__nav a:focus-visible,
+.site-footer a:focus-visible,
+.legal-sidebar__card a:focus-visible {
+    outline: 2px solid rgba(47, 125, 96, 0.35);
+    outline-offset: 3px;
+}
+
 .btn:active {
     transform: translateY(0);
 }
@@ -437,6 +454,72 @@ p {
     background: var(--color-white);
     border-color: rgba(18, 55, 43, 0.18);
     box-shadow: var(--shadow-sm);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .card:hover,
+    .surface-card:hover,
+    .btn:hover,
+    .site-search-toggle:hover,
+    .header-phone:hover,
+    .site-search__chip:hover,
+    .site-search__result:hover,
+    .contact-highlight-card:hover,
+    .contact-info-card:hover,
+    .contact-side-card:hover,
+    .contact-direct-link:hover,
+    .testimonial-editorial__item:hover,
+    .comparison-editorial__card:hover,
+    .directory-card:hover,
+    .about-story-card:hover,
+    .about-model-card:hover,
+    .about-process-card:hover,
+    .about-value-item:hover,
+    .service-factor-card:hover,
+    .service-process-card:hover,
+    .service-overview__card:hover,
+    .service-editorial__quote:hover,
+    .service-editorial__copy:hover,
+    .service-scenarios__list article:hover,
+    .directory-detail-card:hover,
+    .directory-feature-story__card:hover,
+    .directory-feature-story__quote:hover,
+    .legal-section:hover {
+        transform: translateY(-4px);
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .btn,
+    .card,
+    .surface-card,
+    .site-search-toggle,
+    .header-phone,
+    .site-search__chip,
+    .site-search__result,
+    .contact-highlight-card,
+    .contact-info-card,
+    .contact-side-card,
+    .contact-direct-link,
+    .testimonial-editorial__item,
+    .comparison-editorial__card,
+    .directory-card,
+    .about-story-card,
+    .about-model-card,
+    .about-process-card,
+    .about-value-item,
+    .service-factor-card,
+    .service-process-card,
+    .service-overview__card,
+    .service-editorial__quote,
+    .service-editorial__copy,
+    .service-scenarios__list article,
+    .directory-detail-card,
+    .directory-feature-story__card,
+    .directory-feature-story__quote,
+    .legal-section {
+        transform: none !important;
+    }
 }
 
 .btn-full {
