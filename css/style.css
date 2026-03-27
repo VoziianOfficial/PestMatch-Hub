@@ -1228,7 +1228,6 @@ select {
     background: rgba(255, 255, 255, 0.94);
     color: var(--color-text);
     --field-icon: none;
-    background-image: var(--field-icon);
     background-repeat: no-repeat;
     background-size: 16px 16px;
     background-position: left 0.82rem center;
@@ -1259,14 +1258,12 @@ select:focus {
     border-color: rgba(47, 125, 96, 0.18);
     box-shadow: none;
     background: var(--color-white);
-    background-image: var(--field-icon);
     background-repeat: no-repeat;
     background-size: 16px 16px;
     background-position: left 0.82rem center;
 }
 
 form input:focus,
-form textarea:focus,
 form select:focus {
     outline: none;
     border-color: rgba(18, 55, 43, 0.14);
