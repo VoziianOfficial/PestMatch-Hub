@@ -37,9 +37,7 @@
     position: absolute;
     inset: 0;
     z-index: -2;
-    background:
-        linear-gradient(96deg, rgba(247, 250, 247, 0.97) 0%, rgba(247, 250, 247, 0.92) 28%, rgba(247, 250, 247, 0.62) 58%, rgba(247, 250, 247, 0.18) 100%),
-        linear-gradient(180deg, rgba(7, 18, 14, 0.08) 0%, rgba(7, 18, 14, 0.22) 100%);
+    background: linear-gradient(180deg, rgba(7, 18, 14, 0.16) 0%, rgba(7, 18, 14, 0.38) 100%);
 }
 
 .contact-hero__content {
@@ -586,8 +584,7 @@
     }
 
     .contact-hero__overlay {
-        background:
-            linear-gradient(180deg, rgba(247, 250, 247, 0.92) 0%, rgba(247, 250, 247, 0.86) 30%, rgba(247, 250, 247, 0.74) 60%, rgba(247, 250, 247, 0.92) 100%);
+        background: linear-gradient(180deg, rgba(7, 18, 14, 0.22) 0%, rgba(7, 18, 14, 0.44) 100%);
     }
 
     .contact-hero__content {

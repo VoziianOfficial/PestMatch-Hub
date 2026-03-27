@@ -1501,9 +1501,13 @@ select:focus {
     position: relative;
     padding: 4.5rem 0 2rem;
     background:
-        radial-gradient(circle at top left, rgba(47, 125, 96, 0.08), transparent 24%),
-        linear-gradient(180deg, #eef4ef 0%, #e6eee7 100%);
+        linear-gradient(180deg, rgba(8, 19, 15, 0.58) 0%, rgba(8, 19, 15, 0.68) 100%),
+        url("../assets/images/home/hero-footer.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-top: 1px solid rgba(18, 55, 43, 0.08);
+    color: rgba(255, 255, 255, 0.92);
 }
 
 .site-footer__grid {
@@ -1523,13 +1527,14 @@ select:focus {
 }
 
 .service-area-note {
-    color: var(--color-primary);
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 800;
 }
 
 .site-footer h3 {
     margin-bottom: 0.8rem;
     font-size: 1.02rem;
+    color: var(--color-white);
 }
 
 .site-footer ul {
@@ -1538,12 +1543,12 @@ select:focus {
 }
 
 .site-footer a {
-    color: var(--color-text-muted);
-    transition: color var(--transition-fast);
+    color: rgba(255, 255, 255, 0.78);
+    transition: color var(--transition-fast), opacity var(--transition-fast);
 }
 
 .site-footer a:hover {
-    color: var(--color-primary);
+    color: var(--color-white);
 }
 
 .site-footer__bottom {
@@ -1552,7 +1557,7 @@ select:focus {
 }
 
 .site-footer__bottom p {
-    color: var(--color-text-muted);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.92rem;
 }
 
