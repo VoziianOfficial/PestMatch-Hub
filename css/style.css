@@ -1669,6 +1669,15 @@ input[type="checkbox"] {
     max-width: 360px;
 }
 
+.site-footer .footer-text {
+    color: var(--color-white);
+}
+
+.site-footer .footer-logo-text strong,
+.site-footer .footer-logo-text span {
+    color: var(--color-white);
+}
+
 .service-area-note {
     color: rgba(255, 255, 255, 0.9);
     font-weight: 800;
