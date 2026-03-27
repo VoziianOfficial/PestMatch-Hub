@@ -96,7 +96,10 @@
 .service-hero__copy p {
     max-width: 72ch;
     font-size: clamp(1.04rem, 1.35vw, 1.18rem);
-    color: #445a52;
+    color: #233f35;
+    font-weight: 600;
+    line-height: 1.7;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.34);
 }
 
 .service-hero__actions {
@@ -118,6 +121,7 @@
     backdrop-filter: blur(18px);
     overflow: hidden;
     margin-inline: auto;
+    margin-right: clamp(0.35rem, 1.7vw, 1.4rem);
 }
 
 .service-hero__panel::before {

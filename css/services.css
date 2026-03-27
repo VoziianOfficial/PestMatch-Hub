@@ -96,12 +96,16 @@
 .services-directory-hero__copy p {
     max-width: 72ch;
     font-size: clamp(1.04rem, 1.35vw, 1.18rem);
-    color: #445a52;
+    color: #233f35;
+    font-weight: 600;
+    line-height: 1.7;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.34);
 }
 
 .services-directory-hero__aside {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-right: clamp(0.35rem, 1.8vw, 1.4rem);
 }
 
 .services-directory-hero__note {
@@ -544,6 +548,11 @@
         gap: 1.5rem;
         padding-top: 2rem;
         padding-bottom: 3rem;
+    }
+
+    .services-directory-hero__aside {
+        justify-content: center;
+        padding-right: 0;
     }
 
     .services-directory-hero__copy h1,

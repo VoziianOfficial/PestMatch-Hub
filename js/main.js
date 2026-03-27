@@ -570,6 +570,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // =========================
+    // INPUT CHECKMARK STATE
+    // =========================
+    const trackedFields = document.querySelectorAll(
+        "input:not([type='checkbox']):not([type='radio']):not([type='search']), textarea, select"
+    );
+
+    const updateFieldState = (field) => {
+        if (!(field instanceof HTMLElement)) return;
+        const value = (field.value || "").toString().trim();
+        const isFilled = value.length > 0;
+        const isValid = field.checkValidity ? field.checkValidity() : isFilled;
+
+        field.classList.toggle("is-filled", isFilled);
+        field.classList.toggle("is-valid", isFilled && isValid);
+    };
+
+    trackedFields.forEach((field) => {
+        updateFieldState(field);
+        field.addEventListener("input", () => updateFieldState(field));
+        field.addEventListener("change", () => updateFieldState(field));
+        field.addEventListener("blur", () => updateFieldState(field));
+    });
+
+    // =========================
     // OPTIONAL SAFE FAQ FALLBACK
     // =========================
     // Only runs on pages that do not already opt into page-level FAQ handling.

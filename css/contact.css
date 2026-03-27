@@ -74,7 +74,10 @@
 .contact-hero__copy p {
     max-width: 72ch;
     font-size: clamp(1.04rem, 1.4vw, 1.18rem);
-    color: #445a52;
+    color: #233f35;
+    font-weight: 600;
+    line-height: 1.7;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.34);
 }
 
 .contact-hero__actions {
@@ -116,6 +119,8 @@
 
 .contact-hero__panel {
     position: relative;
+    width: min(100%, 470px);
+    justify-self: end;
     padding: 1.45rem;
     border-radius: 32px;
     border: 1px solid rgba(19, 56, 44, 0.08);
@@ -123,7 +128,7 @@
     box-shadow: var(--shadow-xl);
     backdrop-filter: blur(22px);
     overflow: hidden;
-    margin-inline: auto;
+    margin-right: clamp(0.8rem, 2.2vw, 2.2rem);
 }
 
 .contact-hero__panel::before {
@@ -229,10 +234,10 @@
 
 .contact-form-shell {
     display: grid;
-    gap: 1.2rem;
-    padding: clamp(1.2rem, 3.2vw, 1.75rem);
+    gap: 0.95rem;
+    padding: clamp(0.95rem, 2.4vw, 1.4rem);
     border: 1px solid rgba(19, 56, 44, 0.08);
-    border-radius: 32px;
+    border-radius: 28px;
     background:
         radial-gradient(circle at top right, rgba(43, 122, 94, 0.08), transparent 24%),
         linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 245, 241, 0.94) 100%);
@@ -256,7 +261,9 @@
 
 .contact-request-form {
     display: grid;
-    gap: 0.85rem;
+    gap: 0.7rem;
+    width: 100%;
+    max-width: 680px;
 }
 
 .form-progress {
@@ -601,6 +608,9 @@
 
     .contact-hero__panel {
         max-width: 620px;
+        width: min(100%, 620px);
+        justify-self: center;
+        margin-right: 0;
     }
 }
 
@@ -639,7 +649,8 @@
     }
 
     .contact-form-shell {
-        border-radius: 24px;
+        border-radius: 22px;
+        padding: 0.95rem;
     }
 }
 
