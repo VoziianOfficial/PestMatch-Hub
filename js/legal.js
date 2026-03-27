@@ -4,9 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!sections.length || !navLinks.length) return;
 
-    // =========================
-    // SCROLL SPY
-    // =========================
+
+
     const activateLink = (id) => {
         navLinks.forEach((link) => {
             link.classList.remove("is-active");
@@ -33,9 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach((section) => observer.observe(section));
 
-    // =========================
-    // SMOOTH SCROLL
-    // =========================
+
+
     navLinks.forEach((link) => {
         link.addEventListener("click", (e) => {
             const targetId = link.getAttribute("href").replace("#", "");

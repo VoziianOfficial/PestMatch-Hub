@@ -1,14 +1,10 @@
-/* ==================================================
-   HOME PAGE / NEW DIRECTION
-================================================== */
+
 .home-page main {
     overflow: clip;
     position: relative;
 }
 
-/* ==================================================
-   HERO CINEMATIC
-================================================== */
+
 .hero-cinematic {
     position: relative;
     min-height: calc(100vh - var(--header-height));
@@ -222,9 +218,7 @@
     font-weight: 700;
 }
 
-/* ==================================================
-   TRUST MARQUEE
-================================================== */
+
 .trust-marquee {
     position: relative;
     overflow: hidden;
@@ -281,9 +275,7 @@
     }
 }
 
-/* ==================================================
-   EDITORIAL INTRO
-================================================== */
+
 .editorial-intro {
     position: relative;
 }
@@ -353,9 +345,7 @@
     font-weight: 800;
 }
 
-/* ==================================================
-   SERVICE RAIL
-================================================== */
+
 .service-rail {
     position: relative;
 }
@@ -439,9 +429,7 @@
     font-size: 0.97rem;
 }
 
-/* ==================================================
-   COMPARISON EDITORIAL
-================================================== */
+
 .comparison-editorial {
     position: relative;
     background:
@@ -494,9 +482,7 @@
     margin-bottom: 0.5rem;
 }
 
-/* ==================================================
-   TESTIMONIAL EDITORIAL
-================================================== */
+
 .testimonial-editorial {
     position: relative;
 }
@@ -596,9 +582,7 @@
     font-weight: 800;
 }
 
-/* ==================================================
-   COVERAGE EDITORIAL
-================================================== */
+
 .coverage-editorial {
     position: relative;
 }
@@ -650,9 +634,7 @@
     filter: grayscale(0.22) saturate(0.98) contrast(1.02);
 }
 
-/* ==================================================
-   BOTTOM REQUEST
-================================================== */
+
 .bottom-request {
     padding-top: 0;
     padding-bottom: 4rem;
@@ -693,9 +675,7 @@
     max-width: 680px;
 }
 
-/* ==================================================
-   FAQ
-================================================== */
+
 .faq-section {
     position: relative;
 }
@@ -731,9 +711,7 @@
     font-size: 1.03rem;
 }
 
-/* ==================================================
-   RESPONSIVE
-================================================== */
+
 @media (max-width: 1180px) {
 
     .hero-cinematic__content,

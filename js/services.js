@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // =========================
-    // SPLIT TEXT
-    // =========================
+
+
+
     if (window.SplitType && window.gsap && window.ScrollTrigger) {
         const splitTargets = document.querySelectorAll(
             ".services-hero-lux__title, .section-heading h2, .services-cta-lux__copy h2"
@@ -26,9 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // =========================
-    // HERO INTRO
-    // =========================
+
+
     if (window.gsap) {
         const heroEyebrow = document.querySelector(".services-hero-lux__copy .section-eyebrow");
         const heroText = document.querySelector(".services-hero-lux__copy p");
@@ -105,9 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // =========================
-    // HERO PARALLAX
-    // =========================
+
+
     if (window.gsap && window.ScrollTrigger) {
         const heroImage = document.querySelector(".services-hero-lux__media img");
 
@@ -126,9 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // =========================
-    // INDEX CARD HOVER
-    // =========================
+
+
     if (window.gsap) {
         const serviceCards = document.querySelectorAll(".service-index-card");
 
@@ -205,9 +202,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // =========================
-    // STAGGER GROUPS
-    // =========================
+
+
     if (window.gsap && window.ScrollTrigger) {
         const groups = [
             {
@@ -251,9 +247,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // =========================
-    // CTA REVEAL
-    // =========================
+
+
     if (window.gsap && window.ScrollTrigger) {
         const ctaBlock = document.querySelector(".services-cta-lux__inner");
 
@@ -276,9 +271,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // =========================
-    // MAGNETIC BUTTONS
-    // =========================
+
+
     if (window.gsap) {
         const magneticButtons = document.querySelectorAll(".btn");
 

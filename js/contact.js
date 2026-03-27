@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // =========================
-    // ICONS REFRESH
-    // =========================
+
+
+
     const refreshIcons = () => {
         if (window.lucide) {
             lucide.createIcons();
@@ -10,9 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     refreshIcons();
 
-    // =========================
-    // CONTACT HERO REVEAL
-    // =========================
+
+
     if (window.gsap) {
         const heroEyebrow = document.querySelector(".contact-hero__copy .section-eyebrow");
         const heroTitle = document.querySelector(".contact-hero__copy h1");
@@ -91,9 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // =========================
-    // HERO PARALLAX
-    // =========================
+
+
     if (window.gsap && window.ScrollTrigger) {
         const heroImage = document.querySelector(".contact-hero__media img");
 
@@ -112,9 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // =========================
-    // FAQ ACCORDION
-    // =========================
+
+
     const faqButtons = document.querySelectorAll(".faq-question");
 
     faqButtons.forEach((button) => {
@@ -143,9 +140,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // =========================
-    // FORM INTERACTIONS
-    // =========================
+
+
     const form = document.querySelector(".contact-request-form");
     const serviceSelect = document.getElementById("contactService");
     const timingSelect = document.getElementById("contactTiming");
@@ -205,9 +201,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // =========================
-    // SUCCESS MODAL
-    // =========================
+
+
     const successModal = document.getElementById("formSuccessModal");
     const successModalClose = document.querySelector(".form-success-modal__close");
     const successModalBtn = document.getElementById("successModalBtn");
@@ -253,9 +248,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // =========================
-    // REVEALS
-    // =========================
+
+
     if (window.gsap && window.ScrollTrigger) {
         const revealGroups = [
             {
@@ -299,9 +293,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // =========================
-    // MAGNETIC BUTTONS
-    // =========================
+
+
     if (window.gsap) {
         const magneticButtons = document.querySelectorAll(".btn");
 

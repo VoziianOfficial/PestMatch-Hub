@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // =========================
-    // ICONS
-    // =========================
+
+
+
     const refreshIcons = () => {
         if (window.lucide) {
             lucide.createIcons();
@@ -10,9 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     refreshIcons();
 
-    // =========================
-    // PAGE CONTEXT
-    // =========================
+
+
     const path = window.location.pathname.split("/").pop() || "";
 
     const pagePresets = {
@@ -36,9 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     };
 
-    // =========================
-    // HERO REVEAL
-    // =========================
+
+
     if (window.gsap) {
         const eyebrow = document.querySelector(
             ".service-page-hero .section-eyebrow, .service-hero .section-eyebrow, .service-hero-lux .section-eyebrow"
@@ -111,9 +109,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // =========================
-    // HERO PARALLAX
-    // =========================
+
+
     if (window.gsap && window.ScrollTrigger) {
         const heroImage = document.querySelector(
             ".service-page-hero__media img, .service-hero__media img, .service-hero-lux__media img"
@@ -137,9 +134,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // =========================
-    // FAQ
-    // =========================
+
+
     const faqButtons = document.querySelectorAll(".faq-question");
 
     faqButtons.forEach((button) => {
@@ -168,9 +164,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // =========================
-    // FORM PRESET / INTERACTIONS
-    // =========================
+
+
     const serviceForms = document.querySelectorAll("form[data-form-type]");
     const serviceField = document.querySelector(
         "#servicePageService, #requestService, #contactService, select[name='service']"
@@ -201,9 +196,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // =========================
-    // SUCCESS MODAL
-    // =========================
+
+
     const successModal = document.getElementById("formSuccessModal");
     const successModalClose = document.querySelector(".form-success-modal__close");
     const successModalBtn = document.getElementById("successModalBtn");
@@ -254,9 +248,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // =========================
-    // SECTION REVEALS
-    // =========================
+
+
     if (window.gsap && window.ScrollTrigger) {
         const revealGroups = [
             {
@@ -305,9 +298,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // =========================
-    // MAGNETIC BUTTONS
-    // =========================
+
+
     if (window.gsap) {
         const magneticButtons = document.querySelectorAll(".btn");
 

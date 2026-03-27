@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // =========================
-    // ICONS
-    // =========================
+
+
+
     const refreshIcons = () => {
         if (window.lucide) {
             lucide.createIcons();
@@ -283,9 +283,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 0);
     };
 
-    // =========================
-    // DOM REFERENCES
-    // =========================
+
+
     const body = document.body;
     const siteHeader = document.getElementById("siteHeader");
 
@@ -373,9 +372,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // =========================
-    // STICKY HEADER
-    // =========================
+
+
     const handleHeaderState = () => {
         if (!siteHeader) return;
 
@@ -389,9 +387,8 @@ document.addEventListener("DOMContentLoaded", () => {
     handleHeaderState();
     window.addEventListener("scroll", handleHeaderState, { passive: true });
 
-    // =========================
-    // MOBILE MENU
-    // =========================
+
+
     let previousFocusedBeforeMenu = null;
 
     const openMobileMenu = () => {
@@ -408,7 +405,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeMobileMenu = () => {
         if (!mobileMenu || !mobileMenuToggle) return;
 
-        // Move focus out before hiding from assistive tech.
         if (document.activeElement && mobileMenu.contains(document.activeElement)) {
             if (
                 previousFocusedBeforeMenu instanceof HTMLElement &&
@@ -454,7 +450,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // close mobile menu after clicking a link inside it
     const mobileMenuLinks = mobileMenu?.querySelectorAll("a");
     mobileMenuLinks?.forEach((link) => {
         link.addEventListener("click", () => {
@@ -462,9 +457,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // =========================
-    // COOKIE / POLICY BANNER
-    // =========================
+
+
     const COOKIE_KEY = "pestmatch_policy_choice";
 
     const setBannerState = (state) => {
@@ -514,9 +508,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // =========================
-    // SUCCESS MODAL HELPERS
-    // =========================
+
+
     const openSuccessModal = () => {
         if (!successModal) return;
 
@@ -543,18 +536,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // =========================
-    // GENERIC FORM FALLBACK
-    // =========================
-    // This only handles forms that are NOT explicitly marked as JS-owned by page scripts.
-    // If a form has data-form-managed="page", main.js will ignore it.
+
+
+
+
     const genericForms = document.querySelectorAll(
         "form[data-form-type]:not([data-form-managed='page'])"
     );
 
     genericForms.forEach((form) => {
         form.addEventListener("submit", (event) => {
-            // Let page-level scripts fully own forms marked by page logic.
+
             if (form.dataset.formManaged === "page") return;
 
             event.preventDefault();
@@ -569,9 +561,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // =========================
-    // INPUT CHECKMARK STATE
-    // =========================
+
+
     const trackedFields = document.querySelectorAll(
         "input:not([type='checkbox']):not([type='radio']):not([type='search']), textarea, select"
     );
@@ -593,10 +584,9 @@ document.addEventListener("DOMContentLoaded", () => {
         field.addEventListener("blur", () => updateFieldState(field));
     });
 
-    // =========================
-    // OPTIONAL SAFE FAQ FALLBACK
-    // =========================
-    // Only runs on pages that do not already opt into page-level FAQ handling.
+
+
+
     const faqRoot = document.querySelector("[data-faq-managed='page']");
     if (!faqRoot) {
         const faqButtons = document.querySelectorAll(".faq-question");
@@ -628,9 +618,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // =========================
-    // BASIC REVEALS (SAFE)
-    // =========================
+
+
     if (window.gsap && window.ScrollTrigger) {
         gsap.registerPlugin(ScrollTrigger);
 
@@ -656,8 +645,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // =========================
-    // FINAL ICON REFRESH
-    // =========================
+
+
     refreshIcons();
 });

@@ -1,17 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // =========================
-    // SAFE MODE FOR SERVICES PAGE
-    // Без reveal-анимаций, чтобы ничего не исчезало
-    // =========================
 
-    // SPLIT TEXT intentionally disabled
-    // HERO GSAP reveals intentionally disabled
-    // SCROLLTRIGGER reveals intentionally disabled
-    // MAGNETIC BUTTONS intentionally disabled
-
-    // =========================
-    // SIMPLE HOVER FOR SERVICE INDEX
-    // =========================
     const serviceCards = document.querySelectorAll(".service-index-card");
 
     serviceCards.forEach((card) => {
@@ -30,9 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // =========================
-    // FORCE VISIBILITY FOR SAFETY
-    // =========================
+
+
     const forcedVisible = document.querySelectorAll(
         "[data-aos], .services-hero-lux__copy, .services-hero-lux__aside, .services-stat-card, .service-index-card, .editorial-card, .services-review-card, .services-flow-card, .services-cta-lux__inner"
     );
@@ -43,9 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         item.style.visibility = "visible";
     });
 
-    // =========================
-    // HERO CLIENTS COUNTER
-    // =========================
+
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const heroClients = document.querySelector(".hero-clients");
 

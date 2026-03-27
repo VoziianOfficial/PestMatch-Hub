@@ -1,14 +1,10 @@
-/* ==================================================
-   SERVICES PAGE / NEW DIRECTION
-================================================== */
+
 .services-page main {
     overflow: clip;
     position: relative;
 }
 
-/* ==================================================
-   HERO
-================================================== */
+
 .services-directory-hero {
     position: relative;
     min-height: 82vh;
@@ -126,9 +122,7 @@
     font-size: 1.02rem;
 }
 
-/* ==================================================
-   SERVICE DETAILS
-================================================== */
+
 .directory-details {
     position: relative;
     margin-top: -2rem;
@@ -194,9 +188,7 @@
     line-height: 1.5;
 }
 
-/* ==================================================
-   CATEGORY GRID
-================================================== */
+
 .directory-categories {
     position: relative;
 }
@@ -304,9 +296,7 @@
     font-size: 0.95rem;
 }
 
-/* ==================================================
-   EDITORIAL
-================================================== */
+
 .directory-editorial {
     position: relative;
     background:
@@ -347,9 +337,7 @@
     margin-bottom: 0.45rem;
 }
 
-/* ==================================================
-   FEATURE STORY
-================================================== */
+
 .directory-feature-story {
     position: relative;
 }
@@ -432,9 +420,7 @@
     font-weight: 800;
 }
 
-/* ==================================================
-   CTA
-================================================== */
+
 .directory-cta {
     padding-top: 0;
     padding-bottom: 4rem;
@@ -508,9 +494,7 @@
     background: rgba(255, 255, 255, 0.14);
 }
 
-/* ==================================================
-   RESPONSIVE
-================================================== */
+
 @media (max-width: 1180px) {
 
     .services-directory-hero__content,

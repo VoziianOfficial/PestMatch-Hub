@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // =========================
-    // ICONS REFRESH
-    // =========================
+
+
+
     const refreshIcons = () => {
         if (window.lucide) {
             lucide.createIcons();
@@ -10,9 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     refreshIcons();
 
-    // =========================
-    // HERO INTRO
-    // =========================
+
+
     if (window.gsap) {
         const heroEyebrow = document.querySelector(".about-hero__copy .section-eyebrow");
         const heroTitle = document.querySelector(".about-hero__copy h1");
@@ -75,9 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // =========================
-    // HERO PARALLAX
-    // =========================
+
+
     if (window.gsap && window.ScrollTrigger) {
         const heroImage = document.querySelector(".about-hero__media img");
 
@@ -96,9 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // =========================
-    // SECTION REVEALS
-    // =========================
+
+
     if (window.gsap && window.ScrollTrigger) {
         const revealGroups = [
             {
@@ -142,9 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // =========================
-    // MAGNETIC BUTTONS
-    // =========================
+
+
     if (window.gsap) {
         const magneticButtons = document.querySelectorAll(".btn");
 
