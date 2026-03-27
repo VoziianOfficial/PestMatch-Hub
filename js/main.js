@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.insertAdjacentHTML(
             "beforeend",
             `
-            <div class="site-search" id="siteSearchModal" aria-hidden="true">
+            <div class="site-search" id="siteSearchModal" aria-hidden="true" inert>
                 <div class="site-search__backdrop" data-search-close></div>
                 <div class="site-search__panel" role="dialog" aria-modal="true" aria-label="Site search">
                     <div class="site-search__top">
@@ -243,19 +243,36 @@ document.addEventListener("DOMContentLoaded", () => {
         refreshIcons();
     };
 
+    let previousFocusedBeforeSearch = null;
+
     const closeSiteSearch = () => {
         if (!siteSearchModal) return;
 
+        if (document.activeElement && siteSearchModal.contains(document.activeElement)) {
+            if (
+                previousFocusedBeforeSearch instanceof HTMLElement &&
+                document.contains(previousFocusedBeforeSearch)
+            ) {
+                previousFocusedBeforeSearch.focus();
+            } else {
+                siteSearchToggleButton?.focus();
+            }
+        }
+
         siteSearchModal.classList.remove("is-open");
         siteSearchModal.setAttribute("aria-hidden", "true");
+        siteSearchModal.setAttribute("inert", "");
         body.classList.remove("search-open");
+        previousFocusedBeforeSearch = null;
     };
 
     const openSiteSearch = () => {
         if (!siteSearchModal || !siteSearchInput) return;
 
+        previousFocusedBeforeSearch = document.activeElement;
         siteSearchModal.classList.add("is-open");
         siteSearchModal.setAttribute("aria-hidden", "false");
+        siteSearchModal.removeAttribute("inert");
         body.classList.add("search-open");
 
         renderSearchResults(siteSearchInput.value);
@@ -276,6 +293,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
     const mobileMenuClose = document.querySelector(".mobile-menu-close");
     const mobileServiceSelect = document.getElementById("mobileServiceSelect");
+
+    if (mobileMenu && !mobileMenu.classList.contains("is-open")) {
+        mobileMenu.setAttribute("inert", "");
+    }
 
     const cookieBanner = document.getElementById("cookieBanner");
     const cookieAcceptBtn = document.getElementById("cookieAcceptBtn");
@@ -371,11 +392,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // =========================
     // MOBILE MENU
     // =========================
+    let previousFocusedBeforeMenu = null;
+
     const openMobileMenu = () => {
         if (!mobileMenu || !mobileMenuToggle) return;
 
+        previousFocusedBeforeMenu = document.activeElement;
         mobileMenu.classList.add("is-open");
         mobileMenu.setAttribute("aria-hidden", "false");
+        mobileMenu.removeAttribute("inert");
         mobileMenuToggle.setAttribute("aria-expanded", "true");
         body.classList.add("menu-open");
     };
@@ -383,10 +408,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeMobileMenu = () => {
         if (!mobileMenu || !mobileMenuToggle) return;
 
+        // Move focus out before hiding from assistive tech.
+        if (document.activeElement && mobileMenu.contains(document.activeElement)) {
+            if (
+                previousFocusedBeforeMenu instanceof HTMLElement &&
+                document.contains(previousFocusedBeforeMenu)
+            ) {
+                previousFocusedBeforeMenu.focus();
+            } else {
+                mobileMenuToggle.focus();
+            }
+        }
+
         mobileMenu.classList.remove("is-open");
         mobileMenu.setAttribute("aria-hidden", "true");
+        mobileMenu.setAttribute("inert", "");
         mobileMenuToggle.setAttribute("aria-expanded", "false");
         body.classList.remove("menu-open");
+        previousFocusedBeforeMenu = null;
     };
 
     mobileMenuToggle?.addEventListener("click", openMobileMenu);
