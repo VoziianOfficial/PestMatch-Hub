@@ -24,18 +24,43 @@
 <body class="legal-page">
     <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <!-- HEADER -->
-    <header class="site-header">
+    <div class="site-cookie-banner" id="cookieBanner" aria-label="Cookie and policy notice">
+        <div class="site-cookie-banner__inner container">
+            <div class="site-cookie-banner__content">
+                <p>
+                    We use site functionality tools and policy preferences to support your browsing experience.
+                    Please review our
+                    <a href="privacy-policy.html">Privacy Policy</a>,
+                    <a href="cookie-policy.html">Cookie Policy</a>, and
+                    <a href="terms-of-service.html">Terms of Service</a>.
+                </p>
+            </div>
+            <div class="site-cookie-banner__actions">
+                <button class="btn btn-primary" id="cookieAcceptBtn" type="button">Accept</button>
+                <button class="btn btn-secondary" id="cookieDeclineBtn" type="button">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="site-header" id="siteHeader">
         <div class="container header-shell">
-            <a href="index.html" class="site-logo">
-                <span class="site-logo__mark"></span>
+            <a href="index.html" class="site-logo" aria-label="PestMatch Hub home">
+                <span class="site-logo__mark" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="8" y="10" width="48" height="44" rx="14" fill="currentColor" />
+                        <path d="M22 35C22 28.3726 27.3726 23 34 23H42V29H34C30.6863 29 28 31.6863 28 35V42H22V35Z"
+                            fill="white" />
+                        <path d="M34 42V36H42C45.3137 36 48 33.3137 48 30V23H54V30C54 36.6274 48.6274 42 42 42H34Z"
+                            fill="white" />
+                    </svg>
+                </span>
                 <span class="site-logo__text">
                     <strong>PestMatch</strong>
                     <span>Hub</span>
                 </span>
             </a>
 
-            <nav class="site-nav">
+            <nav class="site-nav" aria-label="Main navigation">
                 <div class="site-nav__inner">
                     <a href="index.html">Home</a>
                     <a href="services.html">Services</a>
@@ -43,8 +68,78 @@
                     <a href="contact.html">Contact</a>
                 </div>
             </nav>
+
+            <div class="header-actions">
+                <a class="header-phone" href="tel:+18885550194" aria-label="Call now at 1 888 555 0194">
+                    <i data-lucide="phone-call"></i>
+                    <span>(888) 555-0194</span>
+                </a>
+
+                <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu"
+                    aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true" inert>
+        <div class="mobile-menu__panel">
+            <div class="mobile-menu__top">
+                <a href="index.html" class="site-logo" aria-label="PestMatch Hub home">
+                    <span class="site-logo__mark" aria-hidden="true">
+                        <svg width="30" height="30" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="10" width="48" height="44" rx="14" fill="currentColor" />
+                            <path d="M22 35C22 28.3726 27.3726 23 34 23H42V29H34C30.6863 29 28 31.6863 28 35V42H22V35Z"
+                                fill="white" />
+                            <path d="M34 42V36H42C45.3137 36 48 33.3137 48 30V23H54V30C54 36.6274 48.6274 42 42 42H34Z"
+                                fill="white" />
+                        </svg>
+                    </span>
+                    <span class="site-logo__text">
+                        <strong>PestMatch</strong>
+                        <span>Hub</span>
+                    </span>
+                </a>
+
+                <button class="mobile-menu-close" type="button" aria-label="Close menu">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+
+            <div class="mobile-menu__body">
+                <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+
+                <div class="mobile-menu__services">
+                    <label for="mobileServiceSelect">Browse service categories</label>
+                    <select id="mobileServiceSelect" aria-label="Select service page">
+                        <option value="">Choose a service</option>
+                        <option value="ant-control.html">Ant Control</option>
+                        <option value="termite-control.html">Termite Control</option>
+                        <option value="rodent-control.html">Rodent Control</option>
+                        <option value="bed-bug-treatment.html">Bed Bug Treatment</option>
+                        <option value="mosquito-control.html">Mosquito Control</option>
+                        <option value="commercial-pest-control.html">Commercial Pest Control</option>
+                    </select>
+                </div>
+
+                <div class="mobile-menu__contact">
+                    <p>Need a quicker route?</p>
+                    <a href="tel:+18885550194" class="btn btn-primary">
+                        <i data-lucide="phone-call"></i>
+                        Call Now
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">Request Quotes</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <main id="main-content">
         <section class="legal-hero">
@@ -122,14 +217,72 @@
 
     <footer class="site-footer">
         <div class="container">
+            <div class="site-footer__grid">
+                <div class="site-footer__brand">
+                    <a href="index.html" class="site-logo" aria-label="PestMatch Hub home">
+                        <span class="site-logo__mark" aria-hidden="true">
+                            <svg width="30" height="30" viewBox="0 0 64 64" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="10" width="48" height="44" rx="14" fill="currentColor" />
+                                <path
+                                    d="M22 35C22 28.3726 27.3726 23 34 23H42V29H34C30.6863 29 28 31.6863 28 35V42H22V35Z"
+                                    fill="white" />
+                                <path
+                                    d="M34 42V36H42C45.3137 36 48 33.3137 48 30V23H54V30C54 36.6274 48.6274 42 42 42H34Z"
+                                    fill="white" />
+                            </svg>
+                        </span>
+                        <span class="site-logo__text footer-logo-text"><strong>PestMatch</strong><span>Hub</span></span>
+                    </a>
+                    <p class="footer-text">Independent platform helping homeowners compare local pest control provider
+                        categories and request quotes.</p>
+                    <p class="service-area-note">Service area: United States</p>
+                </div>
+                <div>
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Service Pages</h3>
+                    <ul>
+                        <li><a href="ant-control.html">Ant Control</a></li>
+                        <li><a href="termite-control.html">Termite Control</a></li>
+                        <li><a href="rodent-control.html">Rodent Control</a></li>
+                        <li><a href="bed-bug-treatment.html">Bed Bug Treatment</a></li>
+                        <li><a href="mosquito-control.html">Mosquito Control</a></li>
+                        <li><a href="commercial-pest-control.html">Commercial Pest Control</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="site-footer__bottom">
-                <p class="footer-text">
-                    PestMatch Hub is an independent platform connecting users with service providers.
+                <p>
+                    Disclaimer: This site is a free service to assist homeowners in connecting with local service
+                    providers. All contractors/providers are independent and this site does not warrant or guarantee any
+                    work performed. It is the responsibility of the homeowner to verify that the hired contractor
+                    furnishes the necessary license and insurance required for the work being performed. All persons
+                    depicted in a photo or video are actors or models and not contractors listed on this site.
                 </p>
             </div>
         </div>
     </footer>
 
+    <a class="mobile-call-cta" href="tel:+18885550194" aria-label="Call now"><i data-lucide="phone-call"></i><span>Call
+            Now</span></a>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="js/main.js"></script>
 </body>
 
