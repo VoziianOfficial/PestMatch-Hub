@@ -1615,7 +1615,7 @@ input[type="checkbox"] {
     padding: 4.5rem 0 2rem;
     background:
         linear-gradient(180deg, rgba(8, 19, 15, 0.58) 0%, rgba(8, 19, 15, 0.68) 100%),
-        url("../assets/images/home/hero-footer.jpg");
+        url("../assets/images/shared/shared-card-1.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
